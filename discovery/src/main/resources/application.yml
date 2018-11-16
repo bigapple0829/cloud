@@ -1,0 +1,8 @@
+#端口
+server:
+  port: 8080
+
+eureka:
+  client:
+    register-with-eureka: false  #表示是否注册Eureka服务器,因为自身作为服务注册中心，所以为false
+    fetch-registry: false  #是否从eureka上获取注册信息，同上

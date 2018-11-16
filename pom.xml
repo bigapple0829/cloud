@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.bigapple</groupId>
+    <artifactId>cloud</artifactId>
+    <packaging>pom</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <modules>
+        <module>discovery</module>
+        <module>reptiles</module>
+    </modules>
+    <name>cloud</name>
+    <description>this is bigapple first instrest program!!!!</description>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <mybatis.version>3.4.4</mybatis.version>
+        <mybatis-spring.version>1.3.1</mybatis-spring.version>
+        <pagehelper.version>5.0.0</pagehelper.version>
+        <mysql-connector.version>5.1.39</mysql-connector.version>
+        <druid.version>1.0.27</druid.version>
+
+        <springfox-swagger2.version>2.6.1</springfox-swagger2.version>
+        <core-springboot-starter-autoconfig.version>0.0.6-SNAPSHOT</core-springboot-starter-autoconfig.version>
+    </properties>
+
+    <dependencyManagement>
+
+        <dependencies>
+            <!--springboot自动配置-->
+            <dependency>
+                <groupId>com.juran.core.springboot</groupId>
+                <artifactId>core-springboot-starter-autoconfig</artifactId>
+                <version>${core-springboot-starter-autoconfig.version}</version>
+            </dependency>
+
+            <!-- spring cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Dalston.SR1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- feign modules -->
+            <dependency>
+                <groupId>com.juran.jrdesign</groupId>
+                <artifactId>jrDesign-client</artifactId>
+                <version>${juran.jrdegisn.client.version}</version>
+            </dependency>
+
+
+            <!-- 数据库mysql -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis-spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper</artifactId>
+                <version>${pagehelper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+
+        </dependencies>
+
+
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.source}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
