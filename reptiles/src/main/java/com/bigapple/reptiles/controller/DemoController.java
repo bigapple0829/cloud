@@ -1,9 +1,8 @@
 package com.bigapple.reptiles.controller;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Author: xiongtao
@@ -12,12 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
  * @Email: xiongtao@juran.com.cn
  */
 @RestController
+@Api(value = "测试用例",tags = "'测试用例'")
 public class DemoController {
 
 
 
-    @RequestMapping("/index/{name}")
+    @GetMapping("/index/{name}")
     @ResponseBody
+    @ApiOperation("测试用例")
     public String index(@PathVariable String name){
 
         if(null==name){
