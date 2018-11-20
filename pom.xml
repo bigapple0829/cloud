@@ -32,9 +32,12 @@
         <pagehelper.version>5.0.0</pagehelper.version>
         <mysql-connector.version>5.1.39</mysql-connector.version>
         <druid.version>1.0.27</druid.version>
-
+        <httpclient-version>4.5</httpclient-version>
+        <httpclient-core>4.4.4</httpclient-core>
+        <httpclient-mime>4.5</httpclient-mime>
         <springfox-swagger2.version>2.8.0</springfox-swagger2.version>
         <core-springboot-starter-autoconfig.version>0.0.6-SNAPSHOT</core-springboot-starter-autoconfig.version>
+        <lombok-version>1.16.20</lombok-version>
     </properties>
 
     <dependencyManagement>
@@ -91,18 +94,40 @@
                 <version>${mysql-connector.version}</version>
             </dependency>
 
+            <!--swagger2配置-->
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger2</artifactId>
                 <version>${springfox-swagger2.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${springfox-swagger2.version}</version>
             </dependency>
 
+            <!--httpclient-->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpcore</artifactId>
+                <version>${httpclient-core}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpmime</artifactId>
+                <version>${httpclient-mime}</version>
+            </dependency>
+            <!--lombok-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok-version}</version>
+            </dependency>
         </dependencies>
 
 

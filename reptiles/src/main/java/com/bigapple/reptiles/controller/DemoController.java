@@ -1,7 +1,9 @@
 package com.bigapple.reptiles.controller;
 
+import com.bigapple.reptiles.service.ZhiHuTopicService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -14,18 +16,16 @@ import org.springframework.web.bind.annotation.*;
 @Api(value = "测试用例",tags = "'测试用例'")
 public class DemoController {
 
+    @Autowired
+    ZhiHuTopicService zhiHuTopicService;
 
 
-    @GetMapping("/index/{name}")
+    @GetMapping("/getTopics")
     @ResponseBody
     @ApiOperation("测试用例")
-    public String index(@PathVariable String name){
-
-        if(null==name){
-            name="boy";
-        }
-
-        return "hello world" +name;
+    public String index(){
+        zhiHuTopicService.getTopic();
+        return "ok";
     }
 
 
